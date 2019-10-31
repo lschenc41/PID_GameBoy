@@ -4,9 +4,9 @@ Bob and Liam's PID Box in the form of a GameBoy!
   - [Description](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#description)
   - [Criteria](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#criteria)
   - [Constraints](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#constraints)
-  - [Possible Solutions](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#possible_solutions)
-  - [Sketches/Images](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#sketches_images)
-  - [List of Materials](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#list_of_materials)
+  - [Possible Solutions](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#possible-solutions)
+  - [Sketches/Images](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#sketches-images)
+  - [List of Materials](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#list-of-materials)
   - [Schedule](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#schedule)
 - [Documentation](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#documentation)
   
@@ -53,18 +53,18 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Battery holder
 - LCD screen & backpack
 ### Schedule
-Oct 23: Begin planning
-Nov 1: Planning done & submitted
-Nov 4: Begin CAD
-Nov 26: CAD done
-*Nov 27 - Dec 1: Thanksgiving Break
-Dec 2: Begin printing; Begin code
-Dec 13: Code done
-*Dec 17 - Dec 20: Midterms
-*Dec 23 - Jan 5: Winter Break
-Jan 6: Begin assembly
-Jan 10: Assembly finished
-Jan 13: Begin troubleshooting, testing
+Oct 23: Begin planning\
+Nov 1: Planning done & submitted\
+Nov 4: Begin CAD\
+Nov 26: CAD done\
+\*Nov 27 - Dec 1: Thanksgiving Break\
+Dec 2: Begin printing; Begin code\
+Dec 13: Code done\
+\*Dec 17 - Dec 20: Midterms\
+\*Dec 23 - Jan 5: Winter Break\
+Jan 6: Begin assembly\
+Jan 10: Assembly finished\
+Jan 13: Begin troubleshooting, testing\
 Jan 17: Project done & submitted
  
 Essentially, the planning will be done by the end of the first week, the CAD will be done by Thanksgiving break, the code will be done by midterms, and the project will be submitted by two weeks after we return from winter break. We will have 1.5 weeks to work on the planning, 3.5 weeks to work on the CAD, two weeks to work on the code, and two weeks to work on assembly and troubleshooting. Additionally, we’ll be printing during the same time we work on code to use time efficiently. Overall, this project will take 14 weeks; however, there will be multiple days off as well as about 3.5 weeks of Thanksgiving break, winter break, and exams, bringing it closer to a 10 week long project in terms of class time spent working. We tried to work around the long breaks by deciding on finishing something before them, meaning it’s possible that we’ll actually finish CAD a week before Thanksgiving break, for example.
