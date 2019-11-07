@@ -53,19 +53,18 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Battery holder
 - LCD screen & backpack
 ### Schedule
-Oct 23: Begin planning\
-Nov 1: Planning done & submitted\
-Nov 4: Begin CAD\
-Nov 26: CAD done\
-\*Nov 27 - Dec 1: Thanksgiving Break\
-Dec 2: Begin printing; Begin code\
-Dec 13: Code done\
-\*Dec 17 - Dec 20: Midterms\
-\*Dec 23 - Jan 5: Winter Break\
-Jan 6: Begin assembly\
-Jan 10: Assembly finished\
-Jan 13: Begin troubleshooting, testing\
+Nov 1: Planning done & submitted
+Nov 8: Basic CAD outline completed
+Nov 15: T-slots, holes for switches and buttons, and individual parts (wheel) completed
+Nov 22: Screen assembly completed
+Nov 26: CAD done
+\*Nov 27 - Dec 1: Thanksgiving Break
+Dec 6: Wiring completed
+Dec 13: Code completed
+\*Dec 17 - Dec 20: Midterms
+\*Dec 23 - Jan 5: Winter Break
+Jan 10: Assembly finished
 Jan 17: Project done & submitted
  
-Essentially, the planning will be done by the end of the first week, the CAD will be done by Thanksgiving break, the code will be done by midterms, and the project will be submitted by two weeks after we return from winter break. We will have 1.5 weeks to work on the planning, 3.5 weeks to work on the CAD, two weeks to work on the code, and two weeks to work on assembly and troubleshooting. Additionally, we’ll be printing during the same time we work on code to use time efficiently. Overall, this project will take 14 weeks; however, there will be multiple days off as well as about 3.5 weeks of Thanksgiving break, winter break, and exams, bringing it closer to a 10 week long project in terms of class time spent working. We tried to work around the long breaks by deciding on finishing something before them, meaning it’s possible that we’ll actually finish CAD a week before Thanksgiving break, for example.
+Essentially, the planning will be done by the end of the first week, the CAD will be done by Thanksgiving break, the code will be done by midterms, and the project will be submitted by two weeks after we return from winter break. We’ll be printing during the same time we work on code to use time efficiently. Overall, this project will take 1 weeks; however, there will be multiple days off as well as Thanksgiving break, winter break, and exams, bringing it closer to a 9 week long project in terms of class time spent working. We tried to work around the long breaks by deciding on finishing something before them, meaning it’s possible that we’ll finish CAD a week before Thanksgiving break, for example.
 ## Documentation
