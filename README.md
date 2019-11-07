@@ -5,7 +5,7 @@ Bob and Liam's PID Box in the form of a GameBoy!
   - [Criteria](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#criteria)
   - [Constraints](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#constraints)
   - [Possible Solutions](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#possible-solutions)
-  - [Sketches/Images](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#sketches-images)
+  - [Sketches](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#sketches)
   - [List of Materials](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#list-of-materials)
   - [Schedule](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#schedule)
 - [Documentation](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#documentation)
@@ -36,8 +36,8 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 ### Possible Solutions
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
-### Sketches/Images
-![PID_Gameboy_Image](PID_Gameboy_Image.PNG) ![PID_Gameboy_Sketch](PID_Gameboy_Sketch.PNG)
+### Sketches
+![PID_Gameboy_Image](file:///C:/Users/lschenc41/Pictures/PID_Gameboy_Image.PNG) ![PID_Gameboy_Sketch](file:///C:/Users/lschenc41/Pictures/PID_Gameboy_Sketch.PNG)
 ### List of Materials
 - Arduino
 - Breadboard
