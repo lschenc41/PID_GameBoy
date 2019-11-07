@@ -37,7 +37,7 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
 ### Sketches
-![PID_Gameboy_Image](file:///C:/Users/lschenc41/Pictures/PID_Gameboy_Image.PNG) ![PID_Gameboy_Sketch](file:///C:/Users/lschenc41/Pictures/PID_Gameboy_Sketch.PNG)
+![PID_Gameboy_Image](https://github.com/lschenc41/PID_GameBoy/blob/master/PID_Gameboy_Image.PNG) ![PID_Gameboy_Sketch](https://github.com/lschenc41/PID_GameBoy/blob/master/PID_Gameboy_Sketch.PNG)
 ### List of Materials
 - Arduino
 - Breadboard
