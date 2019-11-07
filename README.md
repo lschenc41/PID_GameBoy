@@ -53,18 +53,18 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Battery holder
 - LCD screen & backpack
 ### Schedule
-Nov 1: Planning done & submitted
-Nov 8: Basic CAD outline completed
-Nov 15: T-slots, holes for switches and buttons, and individual parts (wheel) completed
-Nov 22: Screen assembly completed
-Nov 26: CAD done
-\*Nov 27 - Dec 1: Thanksgiving Break
-Dec 6: Wiring completed
-Dec 13: Code completed
-\*Dec 17 - Dec 20: Midterms
-\*Dec 23 - Jan 5: Winter Break
-Jan 10: Assembly finished
+Nov 1: Planning done & submitted\
+Nov 8: Basic CAD outline completed\
+Nov 15: T-slots, holes for switches and buttons, and individual parts (wheel) completed\
+Nov 22: Screen assembly completed\
+Nov 26: CAD done\
+\*Nov 27 - Dec 1: Thanksgiving Break\
+Dec 6: Wiring completed\
+Dec 13: Code completed\
+\*Dec 17 - Dec 20: Midterms\
+\*Dec 23 - Jan 5: Winter Break\
+Jan 10: Assembly finished\
 Jan 17: Project done & submitted
- 
+
 Essentially, the planning will be done by the end of the first week, the CAD will be done by Thanksgiving break, the code will be done by midterms, and the project will be submitted by two weeks after we return from winter break. We’ll be printing during the same time we work on code to use time efficiently. Overall, this project will take 1 weeks; however, there will be multiple days off as well as Thanksgiving break, winter break, and exams, bringing it closer to a 9 week long project in terms of class time spent working. We tried to work around the long breaks by deciding on finishing something before them, meaning it’s possible that we’ll finish CAD a week before Thanksgiving break, for example.
 ## Documentation
