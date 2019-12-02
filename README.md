@@ -53,15 +53,16 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Battery holder
 - LCD screen & backpack
 ### Schedule
-Nov 1: Planning done & submitted\
-Nov 8: Basic CAD outline completed\
-Nov 22: T-slots, holes for switches and buttons, and individual parts (wheel) completed\
-Nov 26: Screen assembly completed\
+Nov 1: Planning completed\
+\*Nov 8 - Nov 26: Engineering Notebook\
 \*Nov 27 - Dec 1: Thanksgiving Break\
-Dec 6: CAD done\
-Dec 13: Wiring completed\
+Dec 6: Basic CAD outline completed\
+Dec 13: T-slots and holes for switches and buttons completed\
 \*Dec 17 - Dec 20: Midterms\
 \*Dec 23 - Jan 5: Winter Break\
-Jan 10: Code completed\
-Jan 17: Assembly finished, project done & submitted
+Jan 10: Screen assembly completed\
+Jan 17: CAD finished\
+Jan 24: Wiring completed\
+Feb 7: Code completed\
+Feb 14: Assembly finished, project done & submitted
 ## Documentation
