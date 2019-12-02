@@ -1,27 +1,27 @@
 # PART_LIST
 
--Arduino
+- Arduino
 
--Breadboard
+- Breadboard
 
--Motor
+- Motor
 
--LED x3
+- LED x3
 
--Switches x3
+- Switches x3
 
--Wires
+- Wires
 
--Resistors
+- Resistors
 
--Acrylic
+- Acrylic
 
--#4-40 socket head screws and nuts
+- 4-40 socket head screws and nuts
 
--T-Slots
+- T-Slots
 
--Battery
+- Battery
 
--Battery holder
+- Battery holder
 
--LCD screen & backpack
+- LCD screen & backpack
