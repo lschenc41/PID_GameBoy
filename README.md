@@ -66,3 +66,6 @@ Jan 24: Wiring completed\
 Feb 7: Code completed\
 Feb 14: Assembly finished, project done & submitted
 ## Documentation
+**WARNING! This is a work in progress. Please pardon our dust XD**
+
+Liam we sohould staret a loog heer
