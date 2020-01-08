@@ -1,0 +1,18 @@
+This is to FIND AND VIEW the speed of your wheel, not to control the PID
+You'll control the PID after this step.
+
+//make a variable to act as a time point (oldTime)
+
+//compare that variable to the current time (use "millis()" )
+
+//use an IF to see if the time has been more than x milliseconds (1000 is an easy number to start with)
+
+//inside the IF, you want to DETACH the interupts, do a little math to find RPM   (photocount / time = rpm)
+
+// lcd.print out the rpm's and any other data you need
+
+//once you have rpm, you want to reset photocount to 0, and oldTime to the new time (again, use millis()  )
+
+//re-attach the interupts
+
+// end the if }

@@ -1,14 +1,15 @@
 # PID_GameBoy
 Bob and Liam's PID Box in the form of a GameBoy!
-- [Planning](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#planning)
+- [Planning](#planning)
   - [Description](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#description)
-  - [Criteria](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#criteria)
-  - [Constraints](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#constraints)
-  - [Possible Solutions](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#possible-solutions)
-  - [Sketches](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#sketches)
-  - [List of Materials](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#list-of-materials)
-  - [Schedule](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#schedule)
-- [Documentation](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#documentation)
+  - [Criteria](#criteria)
+  - [Constraints](#constraints)
+  - [Possible Solutions](#possible-solutions)
+  - [Sketches](#sketches)
+  - [List of Materials](#list-of-materials)
+  - [Schedule](#schedule)
+- [Documentation](#documentation)
+  - [Code Planning](#code-planning)
   
 ## Planning
 ### Description
@@ -37,7 +38,11 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
 ### Sketches
-<img src="https://github.com/lschenc41/PID_GameBoy/blob/master/Media/PID_Gameboy_Image.PNG" alt="PID_Gameboy_Image" width="200" height="333"> <img src="https://github.com/lschenc41/PID_GameBoy/blob/master/Media/PID_Gameboy_Sketch.PNG" alt="PID_Gameboy_Sketch" width="500" height="250">
+
+<img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="200" height="333"> 
+<img src="Media/PID_Gameboy_Sketch.png" alt="PID_Gameboy_Sketch" width="250" height="125">
+
+
 ### List of Materials
 - Arduino
 - Breadboard
@@ -69,3 +74,56 @@ Feb 14: Assembly finished, project done & submitted
 **WARNING! This is a work in progress. Please pardon our dust XD**
 
 Liam we sohould staret a loog heer
+
+
+
+###Code Planning
+
+Log Date, 1-8-2020
+
+Coding this might honestly be either really confusing, or really ez. As I see it, there are a lot of things we will need for this:
+
+- All of the buttons and switches and knobs consistently working as intended and quickly
+
+- Automatic feedback loop working without interfering with everything else
+
+- something else oh boy
+
+
+Let's just figure out how we're gonna read the rpm
+
+Thankfully we have [this text document](Media/PIDStepsForRPM) from Mr. someone:
+
+>This is to FIND AND VIEW the speed of your wheel, not to control the PID
+>You'll control the PID after this step.
+
+>//make a variable to act as a time point (oldTime)
+
+>//compare that variable to the current time (use "millis()" )
+
+>//use an IF to see if the time has been more than x milliseconds (1000 is an easy number to start with)
+
+>//inside the IF, you want to DETACH the interupts, do a little math to find RPM   (photocount / time = rpm)
+
+>// lcd.print out the rpm's and any other data you need
+
+>//once you have rpm, you want to reset photocount to 0, and oldTime to the new time (again, use millis()  )
+
+>//re-attach the interupts
+
+>// end the if }
+
+OK that's sorta helpful ok
+
+first off, what's RPM?
+
+Rotations / Minutes 
+
+ok, and we detect it using holes
+
+every quadrent is equidistant, so lets have a 
+
+```arduino
+#define NUM_OF_HOLES #ofHoles
+//multipy by 2 bc its whenever it changes
+
