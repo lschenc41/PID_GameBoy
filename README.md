@@ -114,6 +114,8 @@ Thankfully we have [this text document](Media/PIDStepsForRPM) from Mr. someone:
 
 OK that's sorta helpful ok
 
+Log Date: 1-9-2020
+
 first off, what's RPM?
 
 Rotations / Minutes 
@@ -167,11 +169,14 @@ oh wait he's saying not to do that, but instead
 
 long oldTime = 0;
 long time = 0;
+long rpm;
+int photoCount = 0;
 
-void checkTime()
+void check()
 {
-
+  ++photoCount;
 }
+
 void setup() {
   Serial.begin(9600);
   pinMode(PHOTO_PIN, INPUT_PULLUP);
@@ -185,5 +190,26 @@ void setup() {
     */
 }
 
+void loop(){
+  time = millis();
+  if(time-oldTime > 1000)
+  {
+    detachInterrupt(digitalPinToInterrupt(PHOTO_PIN));
+
+    rpm = photoCount/(time-oldTime);
+    lcd.setCursor(0,1); //sets pos to print to
+    //0,0 is the very top left. (Column[0-15], row[0-1])
+    lcd.print(rpm);
+    photoCount = 0;
+    oldTime = millis();
+    attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
+  }
+  
+}
+
 ```
 basically, count, and have time as constant
+
+References:
+
+* [detachInterrupt()](https://www.arduino.cc/reference/en/language/functions/external-interrupts/detachinterrupt/)
