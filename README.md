@@ -37,9 +37,8 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 ### Possible Solutions
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
-### Sketches
+### Sketches<img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="100" height="166"> 
 
-<img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="200" height="333"> 
 <img src="Media/PID_Gameboy_Sketch.png" alt="PID_Gameboy_Sketch" width="250" height="125">
 
 
@@ -123,7 +122,68 @@ ok, and we detect it using holes
 
 every quadrent is equidistant, so lets have a 
 
-```arduino
-#define NUM_OF_HOLES #ofHoles
+``` arduino
+#define NUM_OF_HOLES //#ofHoles
 //multipy by 2 bc its whenever it changes
+```
+We're measuring in milliseconds, so to calc, we take
+2n / m, then * 1000 to convert it to rpm
 
+i THINK that's right but idk how to confirm it or test it
+
+oh i forgot minute so * 60
+
+okokok
+
+so a function to detect the Time
+
+``` arduino
+#define PHOTO_PIN 2 //either 2 or 3
+
+long oldTime = 0;
+long time = 0;
+
+void checkTime()
+{
+
+}
+void setup() {
+  Serial.begin(9600);
+  pinMode(PHOTO_PIN, INPUT_PULLUP);
+
+  attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), checkTime, CHANGE);
+    /*
+      These functions are very funky.
+      First off, use digitalPinToInterrupt() so you don't have to convert pins
+      Remember that a pin can only watch one thing at a time
+      And make functions that take nothing and return nothing
+    */
+}
+
+```
+oh wait he's saying not to do that, but instead
+``` arduino
+#define PHOTO_PIN 2 //either 2 or 3
+
+long oldTime = 0;
+long time = 0;
+
+void checkTime()
+{
+
+}
+void setup() {
+  Serial.begin(9600);
+  pinMode(PHOTO_PIN, INPUT_PULLUP);
+
+  attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
+    /*
+      These functions are very funky.
+      First off, use digitalPinToInterrupt() so you don't have to convert pins
+      Remember that a pin can only watch one thing at a time
+      And make functions that take nothing and return nothing
+    */
+}
+
+```
+basically, count, and have time as constant
