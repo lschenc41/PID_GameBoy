@@ -1,7 +1,9 @@
 # PID_GameBoy
 Bob and Liam's PID Box in the form of a GameBoy!
+##Table of Contents
+###A.K.A ToC
 - [Planning](#planning)
-  - [Description](https://github.com/lschenc41/PID_GameBoy/blob/master/README.md#description)
+  - [Description](#description)
   - [Criteria](#criteria)
   - [Constraints](#constraints)
   - [Possible Solutions](#possible-solutions)
@@ -9,12 +11,29 @@ Bob and Liam's PID Box in the form of a GameBoy!
   - [List of Materials](#list-of-materials)
   - [Schedule](#schedule)
 - [Documentation](#documentation)
+  - [CAD](#cad)
   - [Code Planning](#code-planning)
   
 ## Planning
+
+  - [Description](#description)
+  - [Criteria](#criteria)
+  - [Constraints](#constraints)
+  - [Possible Solutions](#possible-solutions)
+  - [Sketches](#sketches)
+  - [List of Materials](#list-of-materials)
+  - [Schedule](#schedule)
+
+[Back to ToC](table-of-contents)
+
 ### Description
+[Back to ToC](table-of-contents)
+
 Our initial plan for our PID box is to make it in the shape of a Nintendo Gameboy, and model the design after it. The dimensions will be the same as the Gameboy but with twice (thrice if needed) the depth to make room for the Arduino + backpack, breadboard, LCD + backpack, motor, and battery pack. As our LCD screen doesn’t have the same proportions as the Gameboy screen, we’ll put it at the bottom half of the Gameboy screen and have the rest be made of clear acrylic to see the wheel inside the box, which will poke out of the left side. We’ll also replace all of the original Gameboy controls with our own: the power switch will still be a power switch, the battery light will be our power indicator, the D-Pad will be the potentiometer, the A and B keys will be buttons to adjust the brightness of the screen, the start button will be the PID enable switch, and the select button will turn on the LED behind the wheel.
+
 ### Criteria
+[Back to ToC](table-of-contents)
+
 - LCD screen to display RPM and other info
 - Power switch & indicator
 - PID enable switch
@@ -22,6 +41,7 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Wheel connected to motor that breaks a photo interrupter beam
 - LED that blinks when the photo interrupter beam is broken
 - PID feedback system that corrects errors
+
 - Documentation with:
   - Materials used
   - SolidWorks renderings
@@ -31,13 +51,26 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
   - Description of the planning that went into the project, design decisions, and engineering details
   - A schedule of how you spent your time
   - Discussion of problems, errors, miscalculations, and missteps and how we overcame them
+
 ### Constraints
+
+[Back to ToC](table-of-contents)
+
 1. We realized that it might be difficult or even impossible to keep the size & proportions of an actual Gameboy and fit everything (arduino, motor, lcd, wheel, etc) inside the box.
 2. We also realized that our LCD screen is nowhere near the Gameboy’s screen in terms of proportions; our screen is about half the height and is slightly longer.
+
 ### Possible Solutions
+
+[Back to ToC](table-of-contents)
+
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
-### Sketches<img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="100" height="166"> 
+
+### Sketches
+
+[Back to ToC](table-of-contents)
+
+img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="100" height="166"> 
 
 <img src="Media/PID_Gameboy_Sketch.png" alt="PID_Gameboy_Sketch" width="250" height="125">
 
@@ -57,10 +90,11 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Battery holder
 - LCD screen & backpack
 ### Schedule
-Nov 1: Planning completed\
-\*Nov 8 - Nov 26: Engineering Notebook\
-\*Nov 27 - Dec 1: Thanksgiving Break\
-Dec 6: Basic CAD outline completed\
+Nov 1: Planning completed
+
+Nov 8 - Nov 26: Engineering Notebook
+Nov 27 - Dec 1: Thanksgiving Break
+Dec 6: Basic CAD outline completed
 Dec 13: T-slots and holes for switches and buttons completed\
 \*Dec 17 - Dec 20: Midterms\
 \*Dec 23 - Jan 5: Winter Break\
@@ -73,7 +107,10 @@ Feb 14: Assembly finished, project done & submitted
 **WARNING! This is a work in progress. Please pardon our dust XD**
 
 Liam we sohould staret a loog heer
+###CAD
+We decided to start this first
 
+basically, bob found a model
 
 
 ###Code Planning
