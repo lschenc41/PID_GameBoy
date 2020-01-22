@@ -107,13 +107,12 @@ Feb 14: Assembly finished, project done & submitted
 **WARNING! This is a work in progress. Please pardon our dust XD**
 
 Liam we sohould staret a loog heer
-###CAD
-We decided to start this first
+### CAD
 
-basically, bob found a model
+Bob found a model of a gameboy and made a rough draft to see if everything could fit in it. We realized there wasn't enough space, so we made it thicker. Next, Bob made the front face of our gameboy including the screen and holes for buttons and the potentiometer.
 
 
-###Code Planning
+### Code Planning
 
 Log Date, 1-8-2020
 
