@@ -1,7 +1,6 @@
 # PID_GameBoy
 Bob and Liam's PID Box in the form of a GameBoy!
-##Table of Contents
-###A.K.A ToC
+## Table of Contents
 - [Planning](#planning)
   - [Description](#description)
   - [Criteria](#criteria)
@@ -24,15 +23,15 @@ Bob and Liam's PID Box in the form of a GameBoy!
   - [List of Materials](#list-of-materials)
   - [Schedule](#schedule)
 
-[Back to ToC](table-of-contents)
+[Back to ToC](#table-of-contents)
 
 ### Description
-[Back to ToC](table-of-contents)
+[Back to ToC](#table-of-contents)
 
 Our initial plan for our PID box is to make it in the shape of a Nintendo Gameboy, and model the design after it. The dimensions will be the same as the Gameboy but with twice (thrice if needed) the depth to make room for the Arduino + backpack, breadboard, LCD + backpack, motor, and battery pack. As our LCD screen doesn’t have the same proportions as the Gameboy screen, we’ll put it at the bottom half of the Gameboy screen and have the rest be made of clear acrylic to see the wheel inside the box, which will poke out of the left side. We’ll also replace all of the original Gameboy controls with our own: the power switch will still be a power switch, the battery light will be our power indicator, the D-Pad will be the potentiometer, the A and B keys will be buttons to adjust the brightness of the screen, the start button will be the PID enable switch, and the select button will turn on the LED behind the wheel.
 
 ### Criteria
-[Back to ToC](table-of-contents)
+[Back to ToC](#table-of-contents)
 
 - LCD screen to display RPM and other info
 - Power switch & indicator
@@ -54,21 +53,21 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 
 ### Constraints
 
-[Back to ToC](table-of-contents)
+[Back to ToC](#table-of-contents)
 
 1. We realized that it might be difficult or even impossible to keep the size & proportions of an actual Gameboy and fit everything (arduino, motor, lcd, wheel, etc) inside the box.
 2. We also realized that our LCD screen is nowhere near the Gameboy’s screen in terms of proportions; our screen is about half the height and is slightly longer.
 
 ### Possible Solutions
 
-[Back to ToC](table-of-contents)
+[Back to ToC](#table-of-contents)
 
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
 
 ### Sketches
 
-[Back to ToC](table-of-contents)
+[Back to ToC](#table-of-contents)
 
 img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="100" height="166"> 
 
@@ -106,11 +105,13 @@ Feb 14: Assembly finished, project done & submitted
 ## Documentation
 **WARNING! This is a work in progress. Please pardon our dust XD**
 
-Liam we sohould staret a loog heer
 ### CAD
 
-Bob found a model of a gameboy and made a rough draft to see if everything could fit in it. We realized there wasn't enough space, so we made it thicker. Next, Bob made the front face of our gameboy including the screen and holes for buttons and the potentiometer.
+Bob found a model of a gameboy and made a rough draft to see if everything could fit in it. We realized there wasn't enough space, so we made it thicker. Next, Bob made the front face of our gameboy including the screen and holes for buttons and the potentiometer. Liam used the dimensions to make the outer shell of the box including t-slots so it all fit together. Liam then made the wheel part as well as the case for the motor and photointerrupter, so it would be easy to attach it wherever we end up deciding it should go.
 
+1-22-2020
+
+Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case.
 
 ### Code Planning
 
@@ -127,7 +128,7 @@ Coding this might honestly be either really confusing, or really ez. As I see it
 
 Let's just figure out how we're gonna read the rpm
 
-Thankfully we have [this text document](Media/PIDStepsForRPM) from Mr. someone:
+Thankfully we have [this text document](Media/PIDStepsForRPM.txt) from Mr. someone:
 
 >This is to FIND AND VIEW the speed of your wheel, not to control the PID
 >You'll control the PID after this step.
@@ -158,7 +159,7 @@ Rotations / Minutes
 
 ok, and we detect it using holes
 
-every quadrent is equidistant, so lets have a 
+every quadrant is equidistant, so lets have a 
 
 ``` arduino
 #define NUM_OF_HOLES //#ofHoles
