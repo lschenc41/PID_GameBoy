@@ -69,10 +69,7 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 
 [Back to ToC](#table-of-contents)
 
-img src="Media/PID_Gameboy_Image.png" alt="PID_Gameboy_Image" width="100" height="166"> 
-
-<img src="Media/PID_Gameboy_Sketch.png" alt="PID_Gameboy_Sketch" width="250" height="125">
-
+<img src="Media/PID_Gameboy_Sketch.PNG" alt="PID_Gameboy_Sketch" width="250" height="125">
 
 ### List of Materials
 - Arduino
@@ -111,7 +108,11 @@ Bob found a model of a gameboy and made a rough draft to see if everything could
 
 1-22-2020
 
-Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case.
+Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case. 
+
+1-23-2020
+
+Bob added a hole to the motor case where the led will go. It will be behind the wheel part so it flickers as the wheel turns, and will be visible from the screen. He also made the holes in the top part of the box where the wheel will poke out as well as the holes to mount the motor and photointerrupter case.
 
 ### Code Planning
 
