@@ -114,6 +114,8 @@ Bob fixed up the motor case subassembly, adding thicker attachments where needed
 
 Bob added a hole to the motor case where the led will go. It will be behind the wheel part so it flickers as the wheel turns, and will be visible from the screen. He also made the holes in the top part of the box where the wheel will poke out as well as the holes to mount the motor and photointerrupter case.
 
+
+
 ### Code Planning
 
 Log Date, 1-8-2020
