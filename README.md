@@ -88,9 +88,9 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 ### Schedule
 Nov 1: Planning completed
 
-Nov 8 - Nov 26: Engineering Notebook
-Nov 27 - Dec 1: Thanksgiving Break
-Dec 6: Basic CAD outline completed
+Nov 8 - Nov 26: Engineering Notebook\
+Nov 27 - Dec 1: Thanksgiving Break\
+Dec 6: Basic CAD outline completed\
 Dec 13: T-slots and holes for switches and buttons completed\
 \*Dec 17 - Dec 20: Midterms\
 \*Dec 23 - Jan 5: Winter Break\
