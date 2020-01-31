@@ -108,11 +108,11 @@ Bob found a model of a gameboy and made a rough draft to see if everything could
 
 Date | Description
 --- | --- 
-**1-22-2020** | Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case.
-**1-23-2020** | Bob added a hole to the motor case where the led will go. It will be behind the wheel part so it flickers as the wheel turns, and will be visible from the screen. He also made the holes in the top part of the box where the wheel will poke out as well as the holes to mount the motor and photointerrupter case.
-**1-24-2020** | Bob created and attached the LCD mount
-**1-29-2020** | Liam added the holes on the side parts
-**1-30-2020** | Liam created and attached the Arduino mount
+**1/22/2020** | Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case.
+**1/23/2020** | Bob added a hole to the motor case where the led will go. It will be behind the wheel part so it flickers as the wheel turns, and will be visible from the screen. He also made the holes in the top part of the box where the wheel will poke out as well as the holes to mount the motor and photointerrupter case.
+**1/24/2020** | Bob created and attached the LCD mount
+**1/29/2020** | Liam added the holes on the side parts
+**1/30/2020** | Liam created and attached the Arduino mount
 
 ### Code Planning
 
