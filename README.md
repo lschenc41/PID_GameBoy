@@ -106,25 +106,13 @@ Feb 14: Assembly finished, project done & submitted
 
 Bob found a model of a gameboy and made a rough draft to see if everything could fit in it. We realized there wasn't enough space, so we made it thicker. Next, Bob made the front face of our gameboy including the screen and holes for buttons and the potentiometer. Liam used the dimensions to make the outer shell of the box including t-slots so it all fit together. Liam then made the wheel part as well as the case for the motor and photointerrupter, so it would be easy to attach it wherever we end up deciding it should go.
 
-1-22-2020
-
-Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case. 
-
-1-23-2020
-
-Bob added a hole to the motor case where the led will go. It will be behind the wheel part so it flickers as the wheel turns, and will be visible from the screen. He also made the holes in the top part of the box where the wheel will poke out as well as the holes to mount the motor and photointerrupter case.
-
-1-24-2020
-
-Bob created and attached the LCD mount
-
-1-29-2020
-
-Liam added the holes on the side parts
-
-1-30-2020
-
-Liam created and attached the Arduino mount
+Date | Description
+--- | --- 
+**1-22-20** | Bob fixed up the motor case subassembly, adding thicker attachments where needed and reducing overall size. He also added the slots in the motor case.
+**1-23-2020** | Bob added a hole to the motor case where the led will go. It will be behind the wheel part so it flickers as the wheel turns, and will be visible from the screen. He also made the holes in the top part of the box where the wheel will poke out as well as the holes to mount the motor and photointerrupter case.
+**1-24-2020** | Bob created and attached the LCD mount
+**1-29-2020** | Liam added the holes on the side parts
+**1-30-2020** | Liam created and attached the Arduino mount
 
 ### Code Planning
 
