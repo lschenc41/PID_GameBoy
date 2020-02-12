@@ -1,6 +1,8 @@
 # PID_GameBoy
 Bob and Liam's PID Box in the form of a GameBoy!
+
 ## Table of Contents
+
 - [Planning](#planning)
   - [Description](#description)
   - [Criteria](#criteria)
@@ -15,15 +17,13 @@ Bob and Liam's PID Box in the form of a GameBoy!
   
 ## Planning
 
-  - [Description](#description)
-  - [Criteria](#criteria)
-  - [Constraints](#constraints)
-  - [Possible Solutions](#possible-solutions)
-  - [Sketches](#sketches)
-  - [List of Materials](#list-of-materials)
-  - [Schedule](#schedule)
-
-[Back to ToC](#table-of-contents)
+- [Description](#description)
+- [Criteria](#criteria)
+- [Constraints](#constraints)
+- [Possible Solutions](#possible-solutions)
+- [Sketches](#sketches)
+- [List of Materials](#list-of-materials)
+- [Schedule](#schedule)
 
 ### Description
 [Back to ToC](#table-of-contents)
@@ -52,21 +52,18 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
   - Discussion of problems, errors, miscalculations, and missteps and how we overcame them
 
 ### Constraints
-
 [Back to ToC](#table-of-contents)
 
 1. We realized that it might be difficult or even impossible to keep the size & proportions of an actual Gameboy and fit everything (arduino, motor, lcd, wheel, etc) inside the box.
 2. We also realized that our LCD screen is nowhere near the Gameboy’s screen in terms of proportions; our screen is about half the height and is slightly longer.
 
 ### Possible Solutions
-
 [Back to ToC](#table-of-contents)
 
 1. We could solve this by keeping the length and width dimensions and proportions, but double the depth. This would keep it a similar overall size to a Gameboy, and while it would be noticeably thicker, it wouldn’t be too big and would still be recognizable as a Gameboy.
 2. To solve this, we decided to have the top half of the Gameboy screen as clear acrylic on our box, and the bottom half as the LCD screen without the sides showing. This acts as a window where you can see the wheel spinning, and there will be an LED behind the clear acrylic that acts as both a backlight and the LED that blinks when the wheel breaks the photointerrupter beam.
 
 ### Sketches
-
 [Back to ToC](#table-of-contents)
 
 <img src="Media/PID_Gameboy_Sketch.PNG" alt="PID_Gameboy_Sketch" width="250" height="125">
@@ -85,11 +82,13 @@ Our initial plan for our PID box is to make it in the shape of a Nintendo Gamebo
 - Battery
 - Battery holder
 - LCD screen & backpack
-### Schedule
-Nov 1: Planning completed
 
-Nov 8 - Nov 26: Engineering Notebook\
-Nov 27 - Dec 1: Thanksgiving Break\
+### Schedule
+[Back to ToC](#table-of-contents)
+
+Nov 1: Planning completed\
+\*Nov 8 - Nov 26: Engineering Notebook\
+\*Nov 27 - Dec 1: Thanksgiving Break\
 Dec 6: Basic CAD outline completed\
 Dec 13: T-slots and holes for switches and buttons completed\
 \*Dec 17 - Dec 20: Midterms\
@@ -99,10 +98,16 @@ Jan 17: CAD finished\
 Jan 24: Wiring completed\
 Feb 7: Code completed\
 Feb 14: Assembly finished, project done & submitted
+
 ## Documentation
+
+- [CAD](#cad)
+- [Code Planning](#code-planning)
+
 **WARNING! This is a work in progress. Please pardon our dust XD**
 
 ### CAD
+[Back to ToC](#table-of-contents)
 
 Bob found a model of a gameboy and made a rough draft to see if everything could fit in it. We realized there wasn't enough space, so we made it thicker. Next, Bob made the front face of our gameboy including the screen and holes for buttons and the potentiometer. Liam used the dimensions to make the outer shell of the box including t-slots so it all fit together. Liam then made the wheel part as well as the case for the motor and photointerrupter, so it would be easy to attach it wherever we end up deciding it should go.
 
@@ -113,8 +118,13 @@ Date | Description
 **1/24/2020** | Bob created and attached the LCD mount
 **1/29/2020** | Liam added the holes on the side parts
 **1/30/2020** | Liam created and attached the Arduino mount
+**2/03/2020** | Liam flipped the Arduiino mount and cut the hole for the port
+**2/05/2020** | Bob and Liam created the Solidworks drawings for the sides, mounts, and screen
+**2/06/2020** | Bob 3D printed the motor/photointerrupter case
+**2/07/2020** | Bob and Liam laser cut the sides, mounts, and screen
 
 ### Code Planning
+[Back to ToC](#table-of-contents)
 
 Log Date, 1-8-2020
 
