@@ -1,19 +1,29 @@
 LiquidCrystal_I2C lcd(0x3F,2,1,0,4,5,6,7);
 
+int brightness;
+
 #define LED_SWITCH_PIN 12
 bool LED_SWITCH_STATE;
 #define LED_BACKLIGHT_PIN 9
+
 #define BUTTON_INCREASE_PIN 8
 bool BUTTON_INCREASE_STATE;
 #define BUTTON_DECREASE_PIN 7
 bool BUTTON_DECREASE_STATE;
-int brightness;
+
 #define LCD_BACKLIGHT_PIN 3
 
-// temporarily unorganized vars
-#define PID_ENABLE_SWITCH_PIN 6; // change this pin to whatever
+#define PID_ENABLE_SWITCH_PIN 6 // change this pin to whatever
 bool PID_ENABLE_SWITCH_STATE;
 bool PID_enabled;
+
+#define PHOTO_PIN 2
+#define POTENTIOMETER_PIN A0
+
+long time = 0;
+long oldTime = 0;
+long rpm;
+int photoCount = 0;
 
 void setup() {
 	Serial.begin(9600);
@@ -24,12 +34,20 @@ void setup() {
 	pinMode(BUTTON_INCREASE_PIN, INPUT);
 	pinMode(BUTTON_DECREASE_PIN, INPUT);
 
+	pinMode(PID_ENABLE_SWITCH_PIN, INPUT);
+	pinMode(PHOTO_PIN, INPUT);
+	pinMode(POTENTIOMETER_PIN, INPUT);
+
 	lcd.begin(16,2);
 	lcd.setBacklightPin(LCD_BACKLIGHT_PIN, POSITIVE);
 	lcd.setBacklight(brightness);
+
+	attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
 }
 
 void loop() {
+	time = millis();
+
 	// Button Increase
 	BUTTON_INCREASE_STATE = digitalRead(BUTTON_INCREASE_PIN);
 	if (BUTTON_INCREASE_STATE == true) {
@@ -51,6 +69,8 @@ void loop() {
 
 	// LCD
 	lcd.setBacklight(brightness);
+	lcd.setCursor(0,0);
+	lcd.print("Input Speed: " + analogRead(POTENTIOMETER_PIN) + " RPM");
 
 	// PID
 	PID_ENABLE_SWITCH_STATE = digitalRead(PID_ENABLE_SWITCH_PIN);
@@ -59,4 +79,22 @@ void loop() {
 	} else {
 		PID_enabled = false;
 	}
+
+	// RPM Math
+	if (time - oldTime > 1000) {
+		detachInterrupt(digitalPinToInterrupt(PHOTO_PIN));
+		rpm = (photoCount/(time - oldTime)) * 1000 * 60;
+		lcd.setCursor(0,1);
+		lcd.print("Actual Speed: " + rpm + " RPM");
+		photoCount = 0;
+		oldTime = time;
+		attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
+	}
+
+	delay(30);
+	lcd.clear();
+}
+
+void check() {
+	++photoCount;
 }
