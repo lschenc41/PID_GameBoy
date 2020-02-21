@@ -17,9 +17,12 @@ bool BUTTON_DECREASE_STATE;
 bool PID_ENABLE_SWITCH_STATE;
 bool PID_enabled;
 
-#define PHOTO_PIN 2
 #define POTENTIOMETER_PIN A0
+#define TRANSISTOR_PIN 5 // change this pin to whatever
+int MOTOR_SETPOINT_VALUE;
+int MOTOR_OUTPUT_VALUE;
 
+#define PHOTO_PIN 2
 long time = 0;
 long oldTime = 0;
 long rpm;
@@ -72,7 +75,7 @@ void loop() {
 	lcd.setCursor(0,0);
 	lcd.print("Input Speed: " + analogRead(POTENTIOMETER_PIN) + " RPM");
 
-	// PID
+	// Enable PID
 	PID_ENABLE_SWITCH_STATE = digitalRead(PID_ENABLE_SWITCH_PIN);
 	if (PID_ENABLE_SWITCH_STATE == true) {
 		PID_enabled = true;
@@ -80,16 +83,25 @@ void loop() {
 		PID_enabled = false;
 	}
 
-	// RPM Math
+	// RPM / PID Math
 	if (time - oldTime > 1000) {
 		detachInterrupt(digitalPinToInterrupt(PHOTO_PIN));
+		// RPM Math
 		rpm = (photoCount/(time - oldTime)) * 1000 * 60;
 		lcd.setCursor(0,1);
 		lcd.print("Actual Speed: " + rpm + " RPM");
 		photoCount = 0;
 		oldTime = time;
+		// PID Math
+
 		attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
 	}
+
+	// Output to Motor
+	MOTOR_SETPOINT_VALUE = analogRead(POTENTIOMETER_PIN);
+	MOTOR_OUTPUT_VALUE = map(MOTOR_SETPOINT_VALUE, 0, 1023, 0, 255);
+	
+	analogWrite(TRANSISTOR_PIN, MOTOR_OUTPUT_VALUE);
 
 	delay(30);
 	lcd.clear();
