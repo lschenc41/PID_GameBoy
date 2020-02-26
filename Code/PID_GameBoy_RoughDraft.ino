@@ -22,13 +22,19 @@ bool was_PID_enabled;
 #define POTENTIOMETER_PIN A0
 #define TRANSISTOR_PIN 5 // change this pin to whatever
 int MOTOR_SETPOINT_VALUE;
-int MOTOR_OUTPUT_VALUE;
+int MOTOR_INPUT_VALUE;
 
 #define PHOTO_PIN 2
 long time = 0;
 long oldTime = 0;
 long rpm;
 int photoCount = 0;
+
+long error;
+long previous_error;
+long integral;
+long derivative;
+long drive;
 
 void setup() {
 	Serial.begin(9600);
@@ -72,6 +78,9 @@ void loop() {
 		analogWrite(LED_BACKLIGHT_PIN, 0);
 	}
 
+	// Get potentiometer value
+	MOTOR_SETPOINT_VALUE = analogRead(POTENTIOMETER_PIN);
+
 	// Enable PID
 	PID_ENABLE_SWITCH_STATE = digitalRead(PID_ENABLE_SWITCH_PIN);
 	if (PID_ENABLE_SWITCH_STATE == true) {
@@ -92,7 +101,7 @@ void loop() {
 	lcd.setBacklight(brightness);
 	lcd.setCursor(0,0);
 	if (LCD_delay <= 0) {
-		lcd.print("Input Speed: " + analogRead(POTENTIOMETER_PIN) + " RPM");
+		lcd.print("Input Speed: " + MOTOR_SETPOINT_VALUE + " RPM");
 	} else {
 		if (PID_enabled == true) {
 			lcd.print("PID Enabled");
@@ -115,15 +124,14 @@ void loop() {
 		oldTime = time;
 		// PID Math
 		if (PID_enabled == true) {
-
+			// error = MOTOR_SETPOINT_VALUE - 
 		}
 		attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
 	}
 
 	// Output to Motor
-	MOTOR_SETPOINT_VALUE = analogRead(POTENTIOMETER_PIN);
-	MOTOR_OUTPUT_VALUE = map(MOTOR_SETPOINT_VALUE, 0, 1023, 0, 255);
-	analogWrite(TRANSISTOR_PIN, MOTOR_OUTPUT_VALUE);
+	MOTOR_INPUT_VALUE = map(MOTOR_SETPOINT_VALUE, 0, 1023, 0, 255);
+	analogWrite(TRANSISTOR_PIN, MOTOR_INPUT_VALUE);
 
 	delay(30);
 	lcd.clear();
