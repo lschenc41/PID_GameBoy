@@ -30,11 +30,14 @@ long oldTime = 0;
 long rpm;
 int photoCount = 0;
 
-long error;
-long previous_error;
-long integral;
-long derivative;
-long drive;
+long error = 0;
+long previous_error = 0;
+long integral = 0;
+long derivative = 0;
+long drive = 0;
+const int kP = 0;
+const int kI = 0;
+const int kD = 0;
 
 void setup() {
 	Serial.begin(9600);
@@ -124,7 +127,16 @@ void loop() {
 		oldTime = time;
 		// PID Math
 		if (PID_enabled == true) {
-			// error = MOTOR_SETPOINT_VALUE - 
+			error = MOTOR_SETPOINT_VALUE - rpm;
+			integral += error;
+			derivative = error - previous_error;
+			drive = error*kP + integral*kI + derivative*kP;
+			previous_error = error;
+			// wait(dt);
+		} else {
+			error = MOTOR_SETPOINT_VALUE - rpm;
+			drive = error*kP;
+
 		}
 		attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
 	}
