@@ -15,7 +15,7 @@ bool BUTTON_DECREASE_STATE;
 int LCD_delay = 0;
 
 #define PID_ENABLE_SWITCH_PIN 6 // change this pin to whatever
-bool PID_ENABLE_SWITCH_STATE;
+bool PID_ENABLE_SWITCH_STATE;	
 bool PID_enabled;
 bool was_PID_enabled;
 
@@ -35,9 +35,9 @@ long previous_error = 0;
 long integral = 0;
 long derivative = 0;
 long drive = 0;
-const int kP = 0;
-const int kI = 0;
-const int kD = 0;
+const int kP = 1;
+const int kI = 1;
+const int kD = 1;
 
 void setup() {
 	Serial.begin(9600);
