@@ -20,7 +20,7 @@ bool PID_enabled;
 bool was_PID_enabled;
 
 #define POTENTIOMETER_PIN A0
-#define TRANSISTOR_PIN 5 // change this pin to whatever
+#define TRANSISTOR_PIN 11 // change this pin to whatever
 int MOTOR_SETPOINT_VALUE;
 int MOTOR_INPUT_VALUE;
 
@@ -148,6 +148,7 @@ void loop() {
 	delay(30);
 	lcd.clear();
 }
+
 
 void check() {
 	++photoCount;
