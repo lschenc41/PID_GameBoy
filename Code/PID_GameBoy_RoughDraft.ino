@@ -4,25 +4,28 @@ LiquidCrystal_I2C lcd(0x3F,16, 2);
 int brightness;
 
 #define SELECT_PIN 12 // turns led on/off
-bool LED_SWITCH_STATE;
+bool ledSwitchState;
 #define LED_BACKLIGHT_PIN 3
 
-#define BUTTON_INCREASE_PIN 7
-bool BUTTON_INCREASE_STATE;
-#define BUTTON_DECREASE_PIN 8
-bool BUTTON_DECREASE_STATE;
+#define A_BUTTON_PIN 7 //Turns Up Brightness
+bool AButtonState;
+bool pastAButtonState;
+
+#define B_BUTTON_PIN 8 //Turns Down Brightness
+bool BButtonState;
+bool pastBButtonState;
 
 int LCD_delay = 0;
 
 #define PID_ENABLE_SWITCH_PIN 13
-bool PID_ENABLE_SWITCH_STATE;
-bool PID_enabled;
-bool was_PID_enabled;
+bool startSwitchState;
+bool PIDEnabled;
+bool wasPIDEnabled;
 
 #define POTENTIOMETER_PIN A3
 #define TRANSISTOR_PIN 11
-int MOTOR_SETPOINT_VALUE;
-int MOTOR_INPUT_VALUE;
+int motorSetpointValue;
+int motorInputValue;
 
 #define PHOTO_PIN 2
 long time = 0;
@@ -45,8 +48,8 @@ void setup() {
 	pinMode(SELECT_PIN, INPUT);
 	pinMode(LED_BACKLIGHT_PIN, OUTPUT);
 
-	pinMode(BUTTON_INCREASE_PIN, INPUT);
-	pinMode(BUTTON_DECREASE_PIN, INPUT);
+	pinMode(A_BUTTON_PIN, INPUT);
+	pinMode(B_BUTTON_PIN, INPUT);
 
 	pinMode(PID_ENABLE_SWITCH_PIN, INPUT);
 	pinMode(PHOTO_PIN, INPUT);
@@ -62,40 +65,40 @@ void loop() {
 	time = millis();
 
 	// Button Increase
-	BUTTON_INCREASE_STATE = digitalRead(BUTTON_INCREASE_PIN);
-	if (BUTTON_INCREASE_STATE == true) {
+	AButtonState = digitalRead(A_BUTTON_PIN);
+	if (AButtonState == true) {
 		brightness++;
 	}
 	// Button Decrease
-	BUTTON_DECREASE_STATE = digitalRead(BUTTON_DECREASE_PIN);
-	if (BUTTON_DECREASE_STATE == true) {
+	BButtonState = digitalRead(B_BUTTON_PIN);
+	if (BButtonState == true) {
 		brightness--;
 	}
 
 	// LED Switch
-	LED_SWITCH_STATE = digitalRead(SELECT_PIN);
-	if (LED_SWITCH_STATE == true) {
+	ledSwitchState = digitalRead(SELECT_PIN);
+	if (ledSwitchState == true) {
 		analogWrite(LED_BACKLIGHT_PIN, brightness);
 	} else {
 		analogWrite(LED_BACKLIGHT_PIN, 0);
 	}
 
 	// Get potentiometer value
-	MOTOR_SETPOINT_VALUE = analogRead(POTENTIOMETER_PIN);
+	motorSetpointValue = analogRead(POTENTIOMETER_PIN);
 
 	// Enable PID
-	PID_ENABLE_SWITCH_STATE = digitalRead(PID_ENABLE_SWITCH_PIN);
-	if (PID_ENABLE_SWITCH_STATE == true) {
-		PID_enabled = true;
-		if (was_PID_enabled == false) {
+	startSwitchState = digitalRead(PID_ENABLE_SWITCH_PIN);
+	if (startSwitchState == true) {
+		PIDEnabled = true;
+		if (wasPIDEnabled == false) {
 			LCD_delay = 1000;
-			was_PID_enabled = true;
-		}
+			wasPIDEnabled = true;
+		} 
 	} else {
-		PID_enabled = false;
-		if (was_PID_enabled == true) {
+		PIDEnabled = false;
+		if (wasPIDEnabled == true) {
 			LCD_delay = 1000;
-			was_PID_enabled = false;
+			wasPIDEnabled = false;
 		}
 	}
 
@@ -104,9 +107,9 @@ void loop() {
 	lcd.setCursor(0,0);
 	if (LCD_delay <= 0) {
 		lcd.print("Input Speed:");
-		lcd.print(MOTOR_SETPOINT_VALUE);
+		lcd.print(motorSetpointValue);
 	} else {
-		if (PID_enabled == true) {
+		if (PIDEnabled == true) {
 			lcd.print("PID Enabled");
 		} else {
 		LCD_delay--;
@@ -127,15 +130,15 @@ void loop() {
 		photoCount = 0;
 		oldTime = time;
 		// PID Math
-		if (PID_enabled == true) {
-			error = MOTOR_SETPOINT_VALUE - rpm;
+		if (PIDEnabled == true) {
+			error = motorSetpointValue - rpm;
 			integral += error;
 			derivative = error - previous_error;
 			drive = error*kP + integral*kI + derivative*kP;
 			previous_error = error;
 			// wait(dt);
 		} else {
-			error = MOTOR_SETPOINT_VALUE - rpm;
+			error = motorSetpointValue - rpm;
 			drive = error*kP;
 
 		}
@@ -143,8 +146,8 @@ void loop() {
 	}
 
 	// Output to Motor
-	MOTOR_INPUT_VALUE = map(MOTOR_SETPOINT_VALUE, 0, 1023, 0, 255);
-	analogWrite(TRANSISTOR_PIN, MOTOR_INPUT_VALUE);
+	motorInputValue = map(motorSetpointValue, 0, 1023, 0, 255);
+	analogWrite(TRANSISTOR_PIN, motorInputValue);
 
 	delay(30);
 	lcd.clear();
