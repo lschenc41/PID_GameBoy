@@ -1,26 +1,26 @@
-LiquidCrystal_I2C lcd(0x3F,2,1,0,4,5,6,7);
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x3F,16, 2);
 
 int brightness;
 
-#define LED_SWITCH_PIN 12
+#define SELECT_PIN 12 // turns led on/off
 bool LED_SWITCH_STATE;
-#define LED_BACKLIGHT_PIN 9
+#define LED_BACKLIGHT_PIN 3
 
-#define BUTTON_INCREASE_PIN 8
+#define BUTTON_INCREASE_PIN 7
 bool BUTTON_INCREASE_STATE;
-#define BUTTON_DECREASE_PIN 7
+#define BUTTON_DECREASE_PIN 8
 bool BUTTON_DECREASE_STATE;
 
-#define LCD_BACKLIGHT_PIN 3
 int LCD_delay = 0;
 
-#define PID_ENABLE_SWITCH_PIN 6 // change this pin to whatever
-bool PID_ENABLE_SWITCH_STATE;	
+#define PID_ENABLE_SWITCH_PIN 13
+bool PID_ENABLE_SWITCH_STATE;
 bool PID_enabled;
 bool was_PID_enabled;
 
-#define POTENTIOMETER_PIN A0
-#define TRANSISTOR_PIN 11 // change this pin to whatever
+#define POTENTIOMETER_PIN A3
+#define TRANSISTOR_PIN 11
 int MOTOR_SETPOINT_VALUE;
 int MOTOR_INPUT_VALUE;
 
@@ -42,7 +42,7 @@ const int kD = 1;
 void setup() {
 	Serial.begin(9600);
 
-	pinMode(LED_SWITCH_PIN, INPUT);
+	pinMode(SELECT_PIN, INPUT);
 	pinMode(LED_BACKLIGHT_PIN, OUTPUT);
 
 	pinMode(BUTTON_INCREASE_PIN, INPUT);
@@ -53,7 +53,6 @@ void setup() {
 	pinMode(POTENTIOMETER_PIN, INPUT);
 
 	lcd.begin(16,2);
-	lcd.setBacklightPin(LCD_BACKLIGHT_PIN, POSITIVE);
 	lcd.setBacklight(brightness);
 
 	attachInterrupt(digitalPinToInterrupt(PHOTO_PIN), check, CHANGE);
@@ -74,7 +73,7 @@ void loop() {
 	}
 
 	// LED Switch
-	LED_SWITCH_STATE = digitalRead(LED_SWITCH_PIN);
+	LED_SWITCH_STATE = digitalRead(SELECT_PIN);
 	if (LED_SWITCH_STATE == true) {
 		analogWrite(LED_BACKLIGHT_PIN, brightness);
 	} else {
@@ -104,7 +103,8 @@ void loop() {
 	lcd.setBacklight(brightness);
 	lcd.setCursor(0,0);
 	if (LCD_delay <= 0) {
-		lcd.print("Input Speed: " + MOTOR_SETPOINT_VALUE + " RPM");
+		lcd.print("Input Speed:");
+		lcd.print(MOTOR_SETPOINT_VALUE);
 	} else {
 		if (PID_enabled == true) {
 			lcd.print("PID Enabled");
@@ -121,7 +121,8 @@ void loop() {
 		rpm = (photoCount/(time - oldTime)) * 1000 * 60;
 		lcd.setCursor(0,1);
 		if (LCD_delay <= 0) {
-			lcd.print("Actual Speed: " + rpm + " RPM");
+			lcd.print("Actual Speed:");
+			lcd.print(rpm);
 		}
 		photoCount = 0;
 		oldTime = time;
