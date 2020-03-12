@@ -45,7 +45,6 @@ const int kp = 1;
 const int ki = 1;
 const int kd = 1;
 
-
 void setup() {
 	Serial.begin(9600);
 
@@ -75,9 +74,9 @@ void setup() {
 	lcd.clear();
 	delay(1500);
 	lcd.setCursor(0,0);
-	lcd.print("PID Box by:lsche");
+	lcd.print("PID Box by lsche");
 	lcd.setCursor(0,1);
-	lcd.print("nc41, jkammau97");
+	lcd.print("nc41 & jkammau97");
 	delay(3000);
 	lcd.clear();
 	
@@ -105,7 +104,7 @@ void loop() {
 	if (ledSwitchState != true) {
 		analogWrite(LED_BACKLIGHT_PIN, 255);
 	} else {
-		//analogWrite(LED_BACKLIGHT_PIN, 0);
+		analogWrite(LED_BACKLIGHT_PIN, 0);
 	}
 
 	// Get potentiometer value
