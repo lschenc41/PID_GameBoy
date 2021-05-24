@@ -1,3 +1,5 @@
+
+
 #include <Wire.h>
 #include <LiquidCrystal.h>
 #include <LiquidCrystal_I2C.h>
@@ -107,8 +109,8 @@ void loop() {
 		analogWrite(LED_BACKLIGHT_PIN, 0);
 	}
 
-	// Get potentiometer value
-	motorSetpointValue = (analogRead(POTENTIOMETER_PIN)*100)/1023;
+	// Get potentiometer value --map(value, fromLow, fromHigh, toLow, toHigh)
+	motorSetpointValue = map(analogRead(POTENTIOMETER_PIN), 0, 1023, 0, 100);
 
 	// Enable PID
 	startSwitchState = digitalRead(PID_ENABLE_SWITCH_PIN);
